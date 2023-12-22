@@ -61,12 +61,6 @@ This guide provides step-by-step instructions on setting up ocserv (OpenConnect 
 7. **Restart ocserv:**
    ```bash
    sudo systemctl restart ocserv
-8. **Install mailutils:**
-   ```bash
-   # Install mailutils
-   echo "postfix postfix/mailname string mail.kianiranian.com" | sudo debconf-set-selections
-   echo "postfix postfix/main_mailer_type string 'Internet Site'" | sudo debconf-set-selections
-   sudo apt-get install -y mailutils
 
 
 ## Google Authenticator Configuration
@@ -104,7 +98,7 @@ Your ocserv VPN server is now configured with Google Authenticator for enhanced 
 **./script.sh username password ip_address **
 
 
-**The script will send a QR code and 5 emergency scratch codes to the email of the user.**
+**The script will generate a QR code and 5 emergency scratch codes .**
 ```bash
    if [ $(id -u) -ne 0 ]; then
      echo "Please run this script with sudo"
