@@ -40,9 +40,10 @@ This guide provides step-by-step instructions on setting up ocserv (OpenConnect 
    socket-file = /var/run/ocserv-socket
    server-cert = /etc/ssl/certs/ssl-cert-snakeoil.pem
    server-key = /etc/ssl/private/ssl-cert-snakeoil.key
-   ipv4-network = 192.168.99.0
+   ipv4-network = 192.168.12.0
    ipv4-netmask = 255.255.255.0
    dns = 8.8.8.8
+   dns = 1.1.1.1
    max-clients = 10
    max-same-clients = 2
    keepalive = 32400
@@ -116,7 +117,7 @@ Your ocserv VPN server is now configured with Google Authenticator for enhanced 
    password=$2
    ip=$3
    # Create the user with adduser
-   sudo adduser --gecos "" --disabled-password $username
+   sudo adduser --force-badname --gecos "" --disabled-password $username
 
    # set user mod to no-login
    usermod --shell /usr/sbin/nologin $username
@@ -136,8 +137,8 @@ Your ocserv VPN server is now configured with Google Authenticator for enhanced 
 
 
    sudo tee /etc/ocserv/config-per-user/$username <<EOF
-   #route = 10.10.10.0/24
-   tunnel-all-dns = false
+   route = 10.10.10.0/24
+   tunnel-all-dns = true
    dns = 8.8.8.8
    dns = 1.1.1.1
    #ipv4-address = 192.168.99.232 #example ip address
