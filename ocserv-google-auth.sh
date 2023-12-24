@@ -54,5 +54,5 @@ sudo sed -i '/@include common-auth/a auth required pam_google_authenticator.so' 
 sudo systemctl restart ocserv
 
 # Generate and distribute secret keys and QR codes for users
-echo "Follow the instructions to set up Google Authenticator
+echo "Follow the instructions to set up Google Authenticator:
 for adding user to Google Authenticator do like this : sudo -u username google-authenticator"
