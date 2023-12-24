@@ -1,10 +1,10 @@
 #!/bin/bash
   
 # Update package list
-sudo apt update
+sudo apt update -y
 
 # Remove libpam-cap if installed
-sudo apt-get remove libpam-cap
+sudo apt-get remove libpam-cap -y
 
 # Install necessary packages
 sudo apt install -y ocserv libpam-google-authenticator
@@ -54,5 +54,5 @@ sudo sed -i '/@include common-auth/a auth required pam_google_authenticator.so' 
 sudo systemctl restart ocserv
 
 # Generate and distribute secret keys and QR codes for users
-echo "Follow the instructions to set up Google Authenticator:"
-#google-authenticator
+echo "Follow the instructions to set up Google Authenticator
+for adding user to Google Authenticator do like this : sudo -u username google-authenticator"
