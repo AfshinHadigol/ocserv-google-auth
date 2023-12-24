@@ -96,7 +96,7 @@ Your ocserv VPN server is now configured with Google Authenticator for enhanced 
 
 ## Example user creation
 
-**./script.sh username password ip_address **
+** ./script.sh username password ip_address **
 
 
 **The script will generate a QR code and 5 emergency scratch codes .**
