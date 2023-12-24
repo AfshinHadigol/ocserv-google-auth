@@ -50,6 +50,7 @@ This guide provides step-by-step instructions on setting up ocserv (OpenConnect 
    cookie-timeout = 60
    device = evpn
    config-per-user = /etc/ocserv/config-per-user/
+   use-occtl = true
    EOF
 5. **Create 'config-per-user' Directory:**
    ```bash
