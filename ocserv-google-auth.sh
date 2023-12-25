@@ -56,8 +56,8 @@ sudo systemctl restart ocserv
 
 # Generate and distribute secret keys and QR codes for users
 echo "##############################################################
-####################################################################
-###################################################################"
+##############################################################
+##############################################################"
 echo "Follow the instructions to set up Google Authenticator
 
 for adding user to Google Authenticator do like this:
