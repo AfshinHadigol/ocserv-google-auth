@@ -25,15 +25,16 @@ server-key = /etc/ssl/private/ssl-cert-snakeoil.key
 ipv4-network = 192.168.49.0
 ipv4-netmask = 255.255.255.0
 dns = 8.8.8.8
-route = 172.16.10.0/24
+dns = 4.2.2.4
+## When a route is commented out, it means 0.0.0.0/0.
+## If you need a specific route, uncomment it and give it your range.
+#route = 172.16.10.0/24
 max-clients = 10
 max-same-clients = 2
 keepalive = 32400
 device = evpn
 use-occtl = true
 EOF
-
-
 
 # Enable IP forwarding
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -55,4 +56,5 @@ sudo systemctl restart ocserv
 
 # Generate and distribute secret keys and QR codes for users
 echo "Follow the instructions to set up Google Authenticator:
-for adding user to Google Authenticator do like this : sudo -u username google-authenticator"
+for adding user to Google Authenticator do like this:
+sudo -u username google-authenticator -t -d --no-rate-limit --force -w 5"
